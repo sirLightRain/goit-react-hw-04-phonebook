@@ -21,12 +21,12 @@ export const App = () => {
   const [filter, setFilter] = useState('');
 
   // Аналог DidMount. Запускаємо один раз на тсадії монтування і більше ніколи
-  useEffect(() => {
-    const savedContscts = localStorage.getItem('contacts');
-    if (savedContscts !== null) {
-      setContacts(JSON.parse(savedContscts));
-    }
-  }, []);
+  // useEffect(() => {
+  //   const savedContscts = localStorage.getItem('contacts');
+  //   if (savedContscts !== null) {
+  //     setContacts(JSON.parse(savedContscts));
+  //   }
+  // }, []);
 
   // Аналог DidUpdate
   useEffect(() => {
@@ -89,6 +89,7 @@ export const App = () => {
       <ContactList
         contacts={filteredContacts}
         onDeleteContact={handleDeleteContact}
+        filter={filter}
       />
 
       <ToastContainer />
